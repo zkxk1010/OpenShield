@@ -46,4 +46,7 @@ ejemplo: echo "{\"Product_Name\": \"$(uname -s)\", \"Product_Version\": \"$(unam
 output:
 
 <img width="260" alt="{9B8AD801-36AE-4BD3-9D2A-863B41AB2D02}" src="https://github.com/user-attachments/assets/f2775117-c27f-4c4b-8537-88124c2266e5" />
+
+
+
 TODO
