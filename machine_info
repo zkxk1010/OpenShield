@@ -74,17 +74,17 @@ def listar_paquetes_instalados(so):
     print(f" {len(paquetes)} paquetes detectados.\n")
     return paquetes
 
-# Export a json
-if __name__ == "__main__":
-    print(" Iniciando monitor de ciberseguridad...\n")
 
-    so_nombre, so_info = obtener_os()
+# Export a .json
+print(" Iniciando extracción de datos...\n")
 
-    datos_unificados = {
-        "OS": so_info,
-        "Installed_Packages": listar_paquetes_instalados(so_nombre)
-    }
+so_nombre, so_info = obtener_os()
 
-    exportar_a_json(datos_unificados, "machine_info.json")
+datos_unificados = {
+    "OS": so_info,
+    "Installed_Packages": listar_paquetes_instalados(so_nombre)
+}
 
-    print("Recogida de Info de la maquina finalizada.  Archivo generado: machine_info.json\n")
+exportar_a_json(datos_unificados, "machine_info.json")
+
+print("Recogida de datos finalizada. Archivo generado: machine_info.json\n")
