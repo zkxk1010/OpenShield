@@ -42,7 +42,7 @@ output:
 .
 
 
-3.Y por úlimo, estamos sopesnado la idea de si lazar un nmap, para tener uan viisón tamnien a nivel de servciosls levantados ys sus respectivas versiones . Es decir, hacer un descubrimiento de los servicios que están corriendo en los puertos habilitados y la version de ese servicio.
+3.Y por úlimo, estamos sopesando la idea de si lazar un nmap, para tener uan visión también a nivel de servcios levantados y sus respectivas versiones . Es decir, hacer un descubrimiento de los servicios que están corriendo en los puertos habilitados y la versión de ese servicio.Lo cual nos parece algo crítico y merece la pena poder realizar este tipo de análisis.
 
 Esto lo haríamos con la herramienta de nmap. Los parámetros claves a obtener, serán "Product_Name" , "Product_Version" y "Port"
 
