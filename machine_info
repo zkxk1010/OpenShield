@@ -87,4 +87,4 @@ if __name__ == "__main__":
 
     exportar_a_json(datos_unificados, "machine_info.json")
 
-    print("🏁 Monitor finalizado. Archivo generado: machine_info.json\n")
+    print("Recogida de Info de la maquina finalizada.  Archivo generado: machine_info.json\n")
