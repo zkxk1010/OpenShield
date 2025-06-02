@@ -8,19 +8,7 @@ La idea, es recopilar todo aquello que nos ayude a saber en que estado se encuen
 El producto de Openshield va a ser caapz de recopilar la siguiente información sobre una máquina linux(por ejemplo), que es la que usaremos para realizar el testing del aplicativo OPENSHIELD:
 
 
-1.Hacer un descubrimiento de los servicios que están corriendo en los puertos habilitados y la version de ese servicio.
-
-Esto lo haríamos con la herramienta de nmap. Los parámetros claves a obtener, serán "Product_Name" , "Product_Version" y "Port"
-
-ejemplo: nmap - p 22,23,3389,445,80,21,161 (puertos + criticos) -sV (version del servicio) -sN IP > ports_services_running.xml (después en el script habría que hacer una inetegración para pasarlo a .json)
-
-.
-.
-.
-.
-.
-
-2.Listar todas las aplicaciones instaladas y su respectiva versión
+1.Listar todas las aplicaciones instaladas y su respectiva versión. Aquí entraría la parte de drivers.
 
 ejemplo : apt list --installed 2>/dev/null | tail -n +2 | awk -F '[ /]' '{print "{\"package\": \""$1"\", \"version\": \""$2"\", \"architecture\": \""$3"\"}"}' | jq -s '.' > paquetes_instalados.json
 
@@ -39,7 +27,7 @@ output:
 
 
 
-3. Listar versión del kernel y del S.O
+2. Listar versión del kernel y del S.O
 
 ejemplo: echo "{\"Product_Name\": \"$(uname -s)\", \"Product_Version\": \"$(uname -r)\"}" > OS_info.json
 
@@ -47,6 +35,18 @@ output:
 
 <img width="260" alt="{9B8AD801-36AE-4BD3-9D2A-863B41AB2D02}" src="https://github.com/user-attachments/assets/f2775117-c27f-4c4b-8537-88124c2266e5" />
 
+.
+.
+.
+.
+.
+
+
+3.Y por úlimo, estamos sopesnado la idea de si lazar un nmap, para tener uan viisón tamnien a nivel de servciosls levantados ys sus respectivas versiones . Es decir, hacer un descubrimiento de los servicios que están corriendo en los puertos habilitados y la version de ese servicio.
+
+Esto lo haríamos con la herramienta de nmap. Los parámetros claves a obtener, serán "Product_Name" , "Product_Version" y "Port"
+
+ejemplo: nmap - p 22,23,3389,445,80,21,161 (puertos + criticos) -sV (version del servicio) -sN IP > ports_services_running.xml (después en el script habría que hacer una inetegración para pasarlo a .json)
 
 
 TODO
